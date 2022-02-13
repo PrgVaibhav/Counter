@@ -8,6 +8,11 @@ body{
     background-color: #f1f5f8;
     line-height: 1.5;
 }
+h1{
+    font-family: 'Eczar', serif;
+    font-size: 40px;
+}
+
 .main{
     min-height: 100vh;
     display: grid;
@@ -32,16 +37,22 @@ body{
     border-radius: 13px;
 }
 
-h1{
-    font-family: 'Eczar', serif;
-    font-size: 40px;
-}
-
 .btn:hover{
     cursor: pointer;
     transition: all 0.3s linear;
     color: white;
     background-color: black;
+}
+
+
+.increaseByFive {
+    padding: 4px;
+    margin: 25px;
+}
+
+.decreaseByFive{
+    padding: 4px;
+    margin: 25px;
 }
 
 #value{
@@ -53,4 +64,5 @@ footer{
     text-align: center;
     font-family: 'Eczar', serif;
 }
+
 
