@@ -1,35 +1,37 @@
-let count = 0;
+const result = document.querySelector(".result")
+const increase = document.querySelector(".increase");
+const decrease = document.querySelector(".decrease");
+const reset = document.querySelector(".reset");
+const increaseByFive = document.querySelector(".increase-5");
+const decreaseByFive = document.querySelector(".decrease-5");
 
-const value = document.querySelector("#value");
-const btns = document.querySelectorAll(".btn");
-
-btns.forEach(function(btn){
-    btn.addEventListener("click", function(e){
-        const styles = e.currentTarget.classList;
-    if(styles.contains("decrease")){
-        count--;
-    } else if(styles.contains("increase")){
-        count++;
-    } else if(styles.contains("increaseByFive")){
-        count += 5;
-    } 
-    else if(styles.contains("decreaseByFive")){
-        count -= 5;
-    } 
-    else {
-        count = 0;
-    }
-
-    if(count > 0 ){
-        value.style.color = "green"
-    }
-    if(count < 0 ){
-        value.style.color = "red"
-    }
-    if(count === 0 ){
-        value.style.color = "black"
-    }
-
-    value.textContent = count;
-    });
+increase.addEventListener("click", function(){
+    result.innerHTML++;
+    color();
 });
+
+reset.addEventListener("click", function(){
+    result.innerHTML = "0";
+    color();
+});
+
+decrease.addEventListener("click", function(){
+    result.innerHTML--;
+    color();
+});
+
+
+function color() {
+    // Less than 0
+    if(result.innerHTML < 0){
+        result.style.color = "red";
+    }
+
+    if(result.innerHTML > 0){
+        result.style.color = "green";
+    }
+
+    if(result.innerHTML === "0" ){
+        result.style.color = "white";
+    }
+}
